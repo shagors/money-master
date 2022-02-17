@@ -53,7 +53,6 @@ document.getElementById('savings-btn').addEventListener('click', function(){
     const totalIncome = savingsBalance('income-field');
     // savings amount rule
     const savingAmount = (totalIncome * savingPercent) / 100;
-    console.log(savingAmount);
 
     // savings Amount
     const savingsAmountGet = document.getElementById('savings-amount');
@@ -61,6 +60,13 @@ document.getElementById('savings-btn').addEventListener('click', function(){
     savingsAmountGet.innerText = savingAmount;
 
     // remaining balance
+    const balanceAmountGet = document.getElementById('total-balance').innerText;
+    const balanceAmountSet = parseFloat(balanceAmountGet);
     
+    const remainingBalanceAfterSave = balanceAmountSet - savingAmount;
+    
+    const remainingAmountPocketGet = document.getElementById('remaining-amount');
+    const remainingAmountPocketText = remainingAmountPocketGet.innerText;
+    remainingAmountPocketGet.innerText = remainingBalanceAfterSave;
 
 });
