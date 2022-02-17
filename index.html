@@ -27,27 +27,27 @@
     <section class="container">
         <div class="row text-center">
             <div class="col-lg-6 me-5">
-            <img src="./img/bg-img.png" alt="">
+            <img class="w-85" src="./img/bg-img.png" alt="">
             </div>
             <div class="col-lg-5 ms-auto">
                 <h4 class="mb-3">Income</h4>
                 <div class="row align-items-center">
                         <div class="input-group">
                             <span class="input-group-text">Income</span>
-                            <input id="income-field" type="text" aria-label="income" class="form-control">
+                            <input id="income-field" type="number" aria-label="income" class="form-control" placeholder="type amount">
                         </div>
                     <h4 class="my-3">Expenses</h4>
                     <div class="input-group">
                         <span class="input-group-text">Food</span>
-                        <input id="food-expenses" type="text" aria-label="food expenses" class="form-control">
+                        <input id="food-expenses" type="number" aria-label="food expenses" class="form-control" placeholder="type food cost">
                     </div>
                     <div class="input-group my-3">
                         <span class="input-group-text">Rent</span>
-                        <input id="rent-expenses" type="text" aria-label="rent expenses" class="form-control">
+                        <input id="rent-expenses" type="number" aria-label="rent expenses" class="form-control" placeholder="type rent cost">
                     </div>
                     <div class="input-group">
                         <span class="input-group-text">Clothes</span>
-                        <input id="clothes-expenses" type="text" aria-label="food expenses" class="form-control">
+                        <input id="clothes-expenses" type="number" aria-label="food expenses" class="form-control" placeholder="type clothes cost">
                     </div>
                 </div>
                 <button id="total-calculate" class="btn btn-primary mt-3 ">Calculate</button>
@@ -55,7 +55,7 @@
                 <h4 class="mb-3">Balance: <span id="total-balance">000</span></h4>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Save:</span>
-                    <input id="savings-percent" type="text" class="form-control" placeholder="Savings amount percent" aria-label="Username">
+                    <input id="savings-percent" type="number" class="form-control" placeholder="Savings amount percent" aria-label="Username">
                     <span class="input-group-text fw-bold fs-5">%</span>
                     <button id="savings-btn" class="btn btn-primary">Save</button>
                 </div>

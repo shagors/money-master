@@ -41,11 +41,12 @@ document.getElementById('total-calculate').addEventListener('click', function ()
     const balanceAfterExpensesSet = balanceAfterExpensesGet.innerText;
     balanceAfterExpensesGet.innerText = remainBalance;
 
-
 });
 
 // savings part
 document.getElementById('savings-btn').addEventListener('click', function(){
     const percentAmount = savingsBalance('savings-percent');
-    
+    const totalIncome = savingsBalance('income-field');
+    const savingsBalance = totalIncome * percentAmount;
+    console.log(savingsBalance);
 });
