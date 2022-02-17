@@ -6,7 +6,6 @@ function savingsBalance(balanceInputField) {
     // balanceFieldGet.value = '';
     return balanceField;
 }
-
 // calculate button work
 document.getElementById('total-calculate').addEventListener('click', function () {
     
@@ -25,8 +24,7 @@ document.getElementById('total-calculate').addEventListener('click', function ()
     const totalExpensesGet = document.getElementById('total-expenses');
     const totalExpensesSet = totalExpensesGet.innerText;
     if(incomeField < 0 || foodExpenses < 0 || rentExpenses < 0 || clothesExpenses < 0){
-        alert("You entered negative value or empty field give positive value");
-        balanceField.value = '';
+        alert("You entered negative value give positive value");
     }
 
     let totalExpenses = foodExpenses + rentExpenses + clothesExpenses;
@@ -75,7 +73,7 @@ document.getElementById('savings-btn').addEventListener('click', function(){
     }
     else{
         const savingsAmountSet = savingsAmountGet.innerHTML;
-        savingsAmountGet.innerHTML = 'you already Expenses too much why you want save?';
+        savingsAmountGet.innerHTML = 'you already Expenses too much you dont have enough money';
         savingsAmountGet.style.color = 'red';
         const remainingAmountPocketGet = document.getElementById('remaining-amount');
         const remainingAmountPocketText = remainingAmountPocketGet.innerText;
