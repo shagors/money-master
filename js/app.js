@@ -9,8 +9,10 @@ function savingsBalance(balanceInputField) {
 
 // calculate button work
 document.getElementById('total-calculate').addEventListener('click', function () {
+    
     // income field and function call
-     const incomeField = savingsBalance('income-field');
+    const incomeField = savingsBalance('income-field');
+    
     // Expenses field
     // food field and function call
     const foodExpenses = savingsBalance('food-expenses');
@@ -18,6 +20,7 @@ document.getElementById('total-calculate').addEventListener('click', function ()
     const rentExpenses = savingsBalance('rent-expenses');
     // clothes field and function call
     const clothesExpenses = savingsBalance('clothes-expenses');
+    
     // food + rent + clothes = total expenses\
     const totalExpensesGet = document.getElementById('total-expenses');
     const totalExpensesSet = totalExpensesGet.innerText;
@@ -55,10 +58,20 @@ document.getElementById('savings-btn').addEventListener('click', function(){
     const savingsAmountSet = savingsAmountGet.innerText;
     savingsAmountGet.innerText = savingAmount;
     // remaining balance
-    const balanceAmountGet = document.getElementById('total-balance').innerText;
-    const balanceAmountSet = parseFloat(balanceAmountGet);
-    const remainingBalanceAfterSave = balanceAmountSet - savingAmount;
-    const remainingAmountPocketGet = document.getElementById('remaining-amount');
-    const remainingAmountPocketText = remainingAmountPocketGet.innerText;
-    remainingAmountPocketGet.innerText = remainingBalanceAfterSave;
+        const balanceAmountGet = document.getElementById('total-balance').innerText;
+        
+        const balanceAmountSet = parseFloat(balanceAmountGet);
+        if(balanceAmountSet > savingAmount){
+        const remainingBalanceAfterSave = balanceAmountSet - savingAmount;
+        const remainingAmountPocketGet = document.getElementById('remaining-amount');
+        const remainingAmountPocketText = remainingAmountPocketGet.innerText;
+        remainingAmountPocketGet.innerText = remainingBalanceAfterSave;
+        remainingAmountPocketGet.style.color = '#0DCAF0';
+        }
+        else{
+            const savingsAmountSet = savingsAmountGet.innerHTML;
+            savingsAmountGet.innerHTML = 'you already Expenses too much why you want save?';
+            savingsAmountGet.style.color = 'red';
+            remainingAmountPocketGet.innerText = 0;
+        }
 });
