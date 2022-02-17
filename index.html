@@ -27,40 +27,42 @@
     <section class="container">
         <div class="row text-center">
             <div class="col-lg-5 me-5">
-            <img class="w-85" src="./img/bg-img.png" alt="">
+            <img class="w-80 p-3" src="./img/bg-img.png" alt="">
             </div>
             <div class="col-lg-5 ms-auto">
-                <h4 class="mb-3">Income</h4>
-                <div class="row align-items-center">
+                <div class="input-design">
+                    <h4 class="mb-3 text-success fw-bold">Income</h4>
+                    <div class="row align-items-center">
+                            <div class="input-group">
+                                <span class="input-group-text">Income</span>
+                                <input id="income-field" type="number" aria-label="income" class="form-control" placeholder="type amount">
+                            </div>
+                        <h4 class="my-3 text-danger fw-bold">Expenses</h4>
                         <div class="input-group">
-                            <span class="input-group-text">Income</span>
-                            <input id="income-field" type="number" aria-label="income" class="form-control" placeholder="type amount">
+                            <span class="input-group-text">Food</span>
+                            <input id="food-expenses" type="number" aria-label="food expenses" class="form-control" placeholder="type food cost">
                         </div>
-                    <h4 class="my-3">Expenses</h4>
-                    <div class="input-group">
-                        <span class="input-group-text">Food</span>
-                        <input id="food-expenses" type="number" aria-label="food expenses" class="form-control" placeholder="type food cost">
+                        <div class="input-group my-3">
+                            <span class="input-group-text">Rent</span>
+                            <input id="rent-expenses" type="number" aria-label="rent expenses" class="form-control" placeholder="type rent cost">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text">Clothes</span>
+                            <input id="clothes-expenses" type="number" aria-label="food expenses" class="form-control" placeholder="type clothes cost">
+                        </div>
                     </div>
-                    <div class="input-group my-3">
-                        <span class="input-group-text">Rent</span>
-                        <input id="rent-expenses" type="number" aria-label="rent expenses" class="form-control" placeholder="type rent cost">
+                    <button id="total-calculate" class="btn btn-primary mt-3 ">Calculate</button>
+                    <h4 class="my-3 text-danger fw-bold">Total Expenses: <span id="total-expenses"></span></h4>
+                    <h4 class="mb-3 text-info fw-bold">Balance: <span id="total-balance"></span></h4>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Save:</span>
+                        <input id="savings-percent" type="number" class="form-control" placeholder="Savings amount percent" aria-label="Username">
+                        <span class="input-group-text fw-bold fs-5">%</span>
+                        <button id="savings-btn" class="btn btn-primary">Save</button>
                     </div>
-                    <div class="input-group">
-                        <span class="input-group-text">Clothes</span>
-                        <input id="clothes-expenses" type="number" aria-label="food expenses" class="form-control" placeholder="type clothes cost">
-                    </div>
+                    <h5 class="mt-4 text-info fw-bold">Savings Amount: <span id="savings-amount"></span></h5>
+                    <h5 class="mt-3 text-info fw-bold">Remaining Balance: <span id="remaining-amount"></span></h5>
                 </div>
-                <button id="total-calculate" class="btn btn-primary mt-3 ">Calculate</button>
-                <h4 class="my-3">Total Expenses: <span id="total-expenses">000</span></h4>
-                <h4 class="mb-3">Balance: <span id="total-balance">000</span></h4>
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Save:</span>
-                    <input id="savings-percent" type="number" class="form-control" placeholder="Savings amount percent" aria-label="Username">
-                    <span class="input-group-text fw-bold fs-5">%</span>
-                    <button id="savings-btn" class="btn btn-primary">Save</button>
-                </div>
-                <h5 class="mt-4">Savings Amount: <span id="savings-amount"></span></h5>
-                <h5 class="mt-3">Remaining Balance: <span id="remaining-amount"></span></h5>
             </div>
         </div>
     </section>

@@ -64,6 +64,13 @@ document.getElementById('savings-btn').addEventListener('click', function(){
     const balanceAmountSet = parseFloat(balanceAmountGet);
     
     const remainingBalanceAfterSave = balanceAmountSet - savingAmount;
+
+    /* if(balanceAmountSet > savingAmount){
+        const remainingBalanceAfterSave = balanceAmountSet - savingAmount;
+    }
+    else{
+        alert("you excessed your limit");
+    } */
     
     const remainingAmountPocketGet = document.getElementById('remaining-amount');
     const remainingAmountPocketText = remainingAmountPocketGet.innerText;
