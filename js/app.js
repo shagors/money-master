@@ -24,6 +24,10 @@ document.getElementById('total-calculate').addEventListener('click', function ()
     // food + rent + clothes = total expenses\
     const totalExpensesGet = document.getElementById('total-expenses');
     const totalExpensesSet = totalExpensesGet.innerText;
+    if(incomeField < 0 || foodExpenses < 0 || rentExpenses < 0 || clothesExpenses < 0){
+        alert("You entered negative value or empty field give positive value");
+        balanceField.value = '';
+    }
 
     let totalExpenses = foodExpenses + rentExpenses + clothesExpenses;
     totalExpensesGet.innerText = totalExpenses;
@@ -58,22 +62,24 @@ document.getElementById('savings-btn').addEventListener('click', function(){
     const savingsAmountSet = savingsAmountGet.innerText;
     savingsAmountGet.innerText = savingAmount;
     // remaining balance
-        const balanceAmountGet = document.getElementById('total-balance').innerText;
-        
-        const balanceAmountSet = parseFloat(balanceAmountGet);
-        if(balanceAmountSet > savingAmount){
+    const balanceAmountGet = document.getElementById('total-balance').innerText;
+    
+    const balanceAmountSet = parseFloat(balanceAmountGet);
+    if(balanceAmountSet > savingAmount){
         const remainingBalanceAfterSave = balanceAmountSet - savingAmount;
         const remainingAmountPocketGet = document.getElementById('remaining-amount');
         const remainingAmountPocketText = remainingAmountPocketGet.innerText;
         remainingAmountPocketGet.innerText = remainingBalanceAfterSave;
         remainingAmountPocketGet.style.color = '#0DCAF0';
-        }
-        else{
-            const savingsAmountSet = savingsAmountGet.innerHTML;
-            savingsAmountGet.innerHTML = 'you already Expenses too much why you want save?';
-            savingsAmountGet.style.color = 'red';
-            const remainingAmountPocketGet = document.getElementById('remaining-amount');
-            const remainingAmountPocketText = remainingAmountPocketGet.innerText;
-            remainingAmountPocketGet.innerText = 0;
-        }
+        savingsAmountGet.style.color = '#0DCAF0';
+    }
+    else{
+        const savingsAmountSet = savingsAmountGet.innerHTML;
+        savingsAmountGet.innerHTML = 'you already Expenses too much why you want save?';
+        savingsAmountGet.style.color = 'red';
+        const remainingAmountPocketGet = document.getElementById('remaining-amount');
+        const remainingAmountPocketText = remainingAmountPocketGet.innerText;
+        remainingAmountPocketGet.innerText = 0;
+        remainingAmountPocketGet.style.color = 'red';
+    }
 });
