@@ -4,7 +4,7 @@ function savingsBalance(balanceInputField) {
     const balanceFieldGet = document.getElementById(balanceInputField);
     const balanceFieldText = balanceFieldGet.value;
     const balanceField = parseFloat(balanceFieldText);
-    balanceFieldGet.value = '';
+    // balanceFieldGet.value = '';
     return balanceField;
 }
 
@@ -45,8 +45,22 @@ document.getElementById('total-calculate').addEventListener('click', function ()
 
 // savings part
 document.getElementById('savings-btn').addEventListener('click', function(){
-    const percentAmount = savingsBalance('savings-percent');
+    // saving input
+    const savingPercentTextField = document.getElementById('savings-percent');
+    const savingPercentText = savingPercentTextField.value;
+    const savingPercent = parseFloat(savingPercentText);
+
     const totalIncome = savingsBalance('income-field');
-    const savingsBalance = totalIncome * percentAmount;
-    console.log(savingsBalance);
+    // savings amount rule
+    const savingAmount = (totalIncome * savingPercent) / 100;
+    console.log(savingAmount);
+
+    // savings Amount
+    const savingsAmountGet = document.getElementById('savings-amount');
+    const savingsAmountSet = savingsAmountGet.innerText;
+    savingsAmountGet.innerText = savingAmount;
+
+    // remaining balance
+    
+
 });
