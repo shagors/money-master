@@ -12,7 +12,7 @@ document.getElementById('total-calculate').addEventListener('click', function ()
     
     // income field and function call
     const incomeField = savingsBalance('income-field');
-    
+
     // Expenses field
     // food field and function call
     const foodExpenses = savingsBalance('food-expenses');
@@ -72,6 +72,8 @@ document.getElementById('savings-btn').addEventListener('click', function(){
             const savingsAmountSet = savingsAmountGet.innerHTML;
             savingsAmountGet.innerHTML = 'you already Expenses too much why you want save?';
             savingsAmountGet.style.color = 'red';
+            const remainingAmountPocketGet = document.getElementById('remaining-amount');
+            const remainingAmountPocketText = remainingAmountPocketGet.innerText;
             remainingAmountPocketGet.innerText = 0;
         }
 });
