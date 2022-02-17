@@ -43,3 +43,9 @@ document.getElementById('total-calculate').addEventListener('click', function ()
 
 
 });
+
+// savings part
+document.getElementById('savings-btn').addEventListener('click', function(){
+    const percentAmount = savingsBalance('savings-percent');
+    
+});
